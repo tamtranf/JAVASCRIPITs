@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Viết function trả ra giá trị lớn nhất trong một mảng số
+        var findMax =function(arr){
+            let max = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i]>max) {
+                    max=arr[i];
+                    
+                }
+            }
+            console.log(max);
+        }
+        var number = [7,8,10,80];
+        findMax(number);
+//c2
+            let a = number[0];
+
+        var findMax =function(arr,callback){
+            
+            for (let i = 0; i < arr.length; i++) {
+                if (callback(arr[i],a)) {
+                    a=arr[i];
+                    
+                }
+            }
+            console.log(a);
+        }
+        var number = [7,8,10,80];
+        findMax(number,n=>n>a);
+        findMax(number,n=>n<a)
+
+        ///Viết function kiểm tra số chẵn-lẻ, nguyên tố, hoàn hảo
+        var findNumber = function (x,callback) {
+            callback(x);   
+        }
+        findNumber(10,n=>{
+           if (n%2==0) {
+           console.log(n,"là số chẳn"); 
+           } else {
+            console.log(n,"là số lẻ"); 
+           } 
+        })
+
+        findNumber(7,n=>{
+            let check= true;
+            for (let z = 2; z < n; z++) {
+                if ( n%z==0) {
+                    check=false;   
+                }    
+            }
+            if (check) {
+                console.log(n,"là số nguyên tố");   
+            }else{
+                console.log(n,"ko là số nguyên tố");
+            }
+        })
+
+        //8. Viết function trả ra trung bình cộng của một mảng số
+        let arryT=[4,7,8,9,6];
+        function avearr(arr) {
+            let tong=0;
+            for (let i = 0; i < arr.length; i++) {
+                tong+=arr[i];
+   
+            }
+             return tong/(arr.length);
+        
+            
+        }
+        avearr(arryT);
+        console.log(avearr(arryT));
+
+///1. Viết function in ra câu “Xin chào Rikkei Academy”
+
+        function hello (a) {
+            console.log("Xin chào "+a);
+        }
+        hello("Rikkei Academy");
+        hello("Các bạn");
+        
+///2.2. Viết function tính bình phương của một số
+        let x=10;
+        function tinhBinhPhuong(i) {
+            i=i*i;
+            return(i);    
+        }
+        console.log(tinhBinhPhuong(x));
+///3. Viết function tính thế kỷ của một năm nhập vào từ bàn phím. Biết thế kỷ thứ nhất tính từ năm 1 đến 100
+let r = prompt("Nhập Nam");
+r=r.toString();
+
+function tinhTheKy(a) {
+    if (a>=1000) {
+        let y= +(a[0]+a[1]); ///y là những năm >=1000
+        y+1;
+        return y+1;   
+    }else {
+        let z=+(a[0]); //z là nhưng năm <1000
+        z+1;
+        return z+1;
+    }
+
+    
+}
+console.log("Năm",r,"thuộc thế kỉ",tinhTheKy(r));
+///4. Cho chuỗi dài hơn 15 ký tự, viết function cắt chuỗi, lấy ra 10 ký tự đầu tiên và thêm vào dấu “…” ở cuối chuỗi
+///5.5. Viết function chuẩn hóa một từ - chỉ viết hoa chữ cái đầu tiên. Ví dụ: “rIkKEi”sau khi chuẩn hóa thành “Rikkei”
+let str = prompt("Nhập một đoạn văn bản");
+let result='';
+function UpprCase(str) {
+
+        if (str[0]===str[0].toLowerCase()) {
+            result += str[0].toUpperCase();
+            for (let i = 1; i < str.length; i++) {    
+            result+=str[i].toLowerCase();   
+        }
+        }
+        else if(str[0]===str[0].toUpperCase()){
+            result+=str[0];
+            for (let i = 1; i < str.length; i++) {    
+            result+=str[i].toLowerCase();  
+        }
+        }
+        console.log(result);
+}
+console.log(UpprCase(str));
+///9. Nhập vào một vào một số n, in ra n số nguyên tố tăng dần
+
+
+
+
+
+    </script>
+</body>
+</html>
